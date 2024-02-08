@@ -11,14 +11,16 @@ datasource db {
 }
 
 model Account {
-  id                Int       @default(autoincrement())
-  name              String    
-  email             String    @unique
-  password          String
-  isCollaborator    Boolean   @default(false)
-  accountValidated  Boolean   @default(false)
-  created_at        DateTime  @default(now())
-  updated_at        DateTime  @default(now())
+  id                  Int       @default(autoincrement())
+  name                String    
+  email               String    @unique
+  password            String
+  isCollaborator      Boolean   @default(false)
+  accountToken        String    @default("")
+  accountValidated    Boolean   @default(false)
+  tokenResetPassword  String    @default("")
+  created_at          DateTime  @default(now())
+  updated_at          DateTime  @default(now())
 
   @@map("accounts")
 }
