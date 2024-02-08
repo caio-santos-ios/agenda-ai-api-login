@@ -4,36 +4,19 @@ import { ZodError } from 'zod'
 import { JsonWebTokenError } from 'jsonwebtoken'
 import { AppErro } from '../utils/AppErro'
 
-const handleErrorMiddleware = (
-  err: Error,
-  req: Request,
-  res: Response,
-  next: NextFunction
-): Response => {
+const handleErrorMiddleware = ( err: Error, req: Request, res: Response, next: NextFunction ): Response => {
   if (err instanceof AppErro) {
     return res.status(err.status).json({ message: err.message })
-  }
-
-  if (err instanceof EntityNotFoundError) {
-    return res.status(404).json({ message: 'Not found' })
   }
 
   if (err instanceof ZodError) {
     return res.status(400).json({ message: err.flatten().fieldErrors });
   }
 
-  if (err instanceof QueryFailedError && err.message.includes('unique')) {
-    const message: string = err.driverError.detail
-    return res.status(409).json({ message })
-  }
-
   if (err instanceof JsonWebTokenError) {
     return res.status(409).json({ message: err.message })
   }
 
-  if (err instanceof TypeError) {
-    return res.status(409).json({ message: err.message })
-  }
   if (err instanceof Error) {
     return res.status(409).json({ message: err.message })
   }
