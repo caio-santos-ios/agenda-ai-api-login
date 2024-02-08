@@ -54,10 +54,6 @@ const destroy = async () => {
 
 }
 
-const sendMailReset = async () => {
-
-}
-
 const resetPassword = async (token: string, newPassword: string): Promise<void> => {
     const findAccount = await prisma.account.findFirst({
         where: {

@@ -23,14 +23,10 @@ const destroy = async () => {
 
 }
 
-const sendMailReset = async () => {
-
-}
-
 const resetPassword = async (req: Request, res: Response): Promise<Response> => {
     await accountServices.resetPassword(req.params.token, req.body.password)
 
     return res.status(200).json({message: "Senha foi alterada"})
 }
 
-export default { create, read, login, sendMailReset, resetPassword }
+export default { create, read, login, resetPassword }
