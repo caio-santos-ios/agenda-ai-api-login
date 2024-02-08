@@ -5,6 +5,7 @@ import { compare, hash } from "bcryptjs";
 import { arrayResponseAccount, responseAccount } from "./account.schema";
 import { v4 as uuidv4 } from "uuid";
 import { sign } from "jsonwebtoken";
+import { AppErro } from "./utils/AppErro";
 
 const create = async (dataAccount: IrequestAccount): Promise<IresponseAccount> => {
     const findAccount = await prisma.account.findUnique({
@@ -13,7 +14,7 @@ const create = async (dataAccount: IrequestAccount): Promise<IresponseAccount> =
         }
     })
 
-    if(findAccount) throw new Error("E-mail inválido")
+    if(findAccount) throw new AppErro("E-mail inválido", 400)
 
     dataAccount.password = await hash(dataAccount.password, 10)
 
@@ -39,11 +40,11 @@ const login = async (dataLogin: { email: string, password: string }) => {
         }
     })
 
-    if(!findAccount) throw new Error("E-mail ou senha incorretos")
+    if(!findAccount) throw new AppErro("E-mail ou senha incorretos", 400)
 
     const validatedPassword = await compare(dataLogin.password, findAccount.password)
 
-    if(!validatedPassword) throw new Error("E-mail ou senha incorretos")
+    if(!validatedPassword) throw new AppErro("E-mail ou senha incorretos", 400)
 
     const token = sign({id: findAccount.id, isCollaborator: findAccount.isCollaborator}, process.env.SECRET_KEY!, { expiresIn: '5h' })
 
@@ -61,7 +62,7 @@ const resetPassword = async (token: string, newPassword: string): Promise<void> 
         }
     })
 
-    if(!findAccount) throw new Error("token inválido")
+    if(!findAccount) throw new AppErro("token inválido", 400)
     
     newPassword = await hash(newPassword, 10)
     
