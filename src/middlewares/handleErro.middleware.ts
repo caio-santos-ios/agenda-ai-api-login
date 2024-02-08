@@ -1,5 +1,4 @@
 import { NextFunction, Request, Response } from 'express'
-import { EntityNotFoundError, QueryFailedError } from 'typeorm'
 import { ZodError } from 'zod'
 import { JsonWebTokenError } from 'jsonwebtoken'
 import { AppErro } from '../utils/AppErro'
