@@ -3,6 +3,7 @@
     <div>
         <h5>Rota de criação</h5>
         <pre>
+            <p>POST - /accounts</p>
             <code>
                 {
                     "name": "Caio",
