@@ -1,8 +1,19 @@
 <html>
     <h1>API de login - DOCUMENTAÇÃO</h1>
-    <div>
+## Instalação
+Para instalar o projeto, siga estas etapas:
+
+1. Clone o repositório.
+2. Execute `npm install`.
+
+## Uso
+
+Para usar o projeto, execute o seguinte comando:
+
+```bash
+npm run dev
+    <pre>
         <h5>Rota de criação</h5>
-        <pre>
             <p>POST - /accounts</p>
             <code>
                 {
@@ -25,6 +36,5 @@
                     "updated_at": "2024-02-08T15:35:50.084Z"
                 }
             </code>
-        </pre>
-    </div>
+    </pre>
 </html>
