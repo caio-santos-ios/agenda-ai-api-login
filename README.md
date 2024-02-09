@@ -27,4 +27,12 @@ npm run dev
 | PATCH  | /accounts/resetPassword/:token   | Rota para alterar senha              |
 | DELETE | /accounts/:id                    | Rota para excluir usuário por ID     |
 
-### POST - criar conta
+### POST - /accounts
+
+Dados para criação:
+
+```json 
+    {
+        "name": "Caio"
+    }
+```
