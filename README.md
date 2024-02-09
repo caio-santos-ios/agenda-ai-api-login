@@ -17,10 +17,14 @@ npm run dev
 
 ## Rotas
 
-| Método | Rota                  | Descrição              |
-| ------ | --------------------- | ---------------------- |
-| POST   | /api/login            | Rota para login        |
-| POST   | /api/registration     | Rota para registro     |
-| GET    | /api/user/:id         | Rota para obter usuário por ID |
-| PUT    | /api/user/:id         | Rota para atualizar usuário por ID |
-| DELETE | /api/user/:id         | Rota para excluir usuário por ID |
+| Método | Rota                             | Descrição                            |
+| ------ | ------------------------         | ------------------------------------ |
+| POST   | /accounts/login                  | Rota para login                      |
+| PATCH  | /accounts/confirmation           | Rota para confirmar a conta criada   |
+| POST   | /accounts                        | Rota para registro                   |
+| GET    | /accounts                        | Rota para obter todos usuários       |
+| POST   | /accounts/resetPassword          | Rota para solicitar alterar senha    |
+| PATCH  | /accounts/resetPassword/:token   | Rota para alterar senha              |
+| DELETE | /accounts/:id                    | Rota para excluir usuário por ID     |
+
+### POST - criar conta
