@@ -64,3 +64,41 @@ Quando o e-mail já esta cadastrado.
         "message": "E-mail inválido"
     }
 ```
+
+### POST - /accounts/login
+
+Dados para login:
+
+```json
+    {
+        "email": "caiosantos.dev@outlook.com",
+        "password": "12345678"
+    }
+```
+
+Retorno - 200:
+Login feito com sucesso.
+
+```json
+    {
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaXNDb2xsYWJvcmF0b3IiOmZhbHNlLCJpYXQiOjE3MDc0MDk0NjIsImV4cCI6MTcwNzQyNzQ2Mn0.jxYvQTFmA9QliVFoVzPfsCmuCvoBs2ZsdUO9RhD0bfc"
+    }
+```
+
+Retorno - 409:
+Tentar fazer o login sem ativa conta.
+
+```json
+    {
+         "message": "Conta não foi ativada"
+    }
+```
+
+Retorno - 400:
+E-mail ou senha incorretos.
+
+```json
+    {
+        "message": "E-mail ou senha incorretos"
+    }
+```
