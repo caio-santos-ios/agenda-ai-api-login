@@ -36,9 +36,10 @@ Dados para criação:
         "name": "Caio",
         "email": "caiosantos.dev@outlook.com",
         "password": "12345678"
-    }```
+    }
+```
+## Retorno - 200:
 
-Retorno - 200:
 ```json
     {
         "id": 1,
