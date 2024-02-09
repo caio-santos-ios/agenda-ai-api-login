@@ -38,7 +38,9 @@ Dados para criação:
         "password": "12345678"
     }
 ```
-## Retorno - 200:
+
+Retorno - 200:
+Conta criada com sucesso.
 
 ```json
     {
@@ -51,5 +53,14 @@ Dados para criação:
         "tokenResetPassword": "",
         "created_at": "2024-02-08T15:35:50.084Z",
         "updated_at": "2024-02-08T15:35:50.084Z"
+    }
+```
+
+Retorno - 400:
+Quando o e-mail já esta cadastrado.
+
+```json
+    {
+        "message": "E-mail inválido"
     }
 ```
