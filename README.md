@@ -1,4 +1,5 @@
 ## Instalação
+
 Para instalar o projeto, siga estas etapas:
 
 1. Clone o repositório.
@@ -10,7 +11,3 @@ Para usar o projeto, execute o seguinte comando:
 
 ```bash
 npm run dev
-
-<html>
-    <h1>API de login - DOCUMENTAÇÃO</h1>    
-</html>
