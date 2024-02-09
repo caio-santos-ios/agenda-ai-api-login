@@ -2,6 +2,7 @@
     <h1>API de login - DOCUMENTAÇÃO</h1>
     <div>
         <h5>Rota de criação</h5>
+        <pre>
             <code>
                 {
                     "name": "Caio",
@@ -9,5 +10,6 @@
                     "password": "12345678"
                 }
             </code>
+        </pre>
     </div>
 </html>
