@@ -39,7 +39,7 @@ Dados para criação:
     }
 ```
 
-Retorno - 200:
+Retorno - 201:
 Conta criada com sucesso.
 
 ```json
