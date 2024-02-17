@@ -86,7 +86,7 @@ Login feito com sucesso.
 ```
 
 Retorno - 409:
-Tentar fazer o login sem ativa conta.
+Tentar fazer o login sem ativar conta.
 
 ```json
     {

@@ -8,7 +8,7 @@ export const resetPassword = async (req: Request, res: Response, next: NextFunct
     const { email, name } = res.locals.account
     const tokenReset = uuid4()
 
-    await sendMail(req.body, "Trocar senha", geneteTemplateMail())
+    await sendMail(req.body, "Trocar senha", geneteTemplateMail(name, "Para alterar sua senha clique abaixo:", "#22BC66", "Alterar senha", `http://localhost:3000/resetPassword?token=${tokenReset}` ))
 
     await prisma.account.update({
         where: {

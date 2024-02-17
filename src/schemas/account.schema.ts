@@ -15,6 +15,8 @@ export const account = z.object({
 
 export const responseAccount = account.omit({password: true})
 
+export const responseAccountUpdate = account.partial()
+
 export const arrayResponseAccount = responseAccount.array()
 
 export const requestAccount = account.omit({id: true, created_at: true, updated_at: true })

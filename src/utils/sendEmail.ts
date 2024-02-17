@@ -21,7 +21,6 @@ export const sendMail = async (account: Iaccount, title: string, html: string) =
     await transport.sendMail({
         to: account.email,
         subject: title,
-        text: "Teste",
         html
     })
 }
