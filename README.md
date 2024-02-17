@@ -134,3 +134,18 @@ Litagem de todas as contas.
         }
     ]
 ```
+
+### POST - /accounts/resetPassword
+
+Retorno - 200:
+Altera senha da conta.
+
+Dados para alterar:
+
+```json
+    {
+        "email": "caiosantos.dev@outlook.com"
+    }
+```
+
+Será enviado um e-mail, para o usuário logado, com o link + token para alterar senha.
