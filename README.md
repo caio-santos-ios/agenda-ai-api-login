@@ -148,4 +148,4 @@ Dados para alterar:
     }
 ```
 
-<h1> Será enviado um e-mail, para o usuário logado, com o link + token para alterar senha. </h1>
+<h5> Será enviado um e-mail, para o usuário logado, com o link + token para alterar senha. </h5>
