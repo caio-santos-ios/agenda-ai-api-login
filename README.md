@@ -137,6 +137,8 @@ Litagem de todas as contas.
 
 ### POST - /accounts/resetPassword
 
+<span>Necessário estar autenticado(token)</span>
+
 Retorno - 200:
 Altera senha da conta.
 
@@ -149,3 +151,5 @@ Dados para alterar:
 ```
 
 <h5> Será enviado um e-mail, para o usuário logado, com o link + token para alterar senha. </h5>
+
+Retorno - 409:
