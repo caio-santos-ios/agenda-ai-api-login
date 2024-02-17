@@ -102,3 +102,35 @@ E-mail ou senha incorretos.
         "message": "E-mail ou senha incorretos"
     }
 ```
+
+### GET - /accounts
+
+Retorno - 200:
+Litagem de todas as contas.
+
+```json
+    [
+        {
+             "id": 1,
+            "name": "Caio",
+            "email": "caiosantos.dev@outlook.com",
+            "isCollaborator": false,
+            "accountToken": "",
+            "accountValidated": true,
+            "tokenResetPassword": "",
+            "created_at": "2024-02-08T15:35:50.084Z",
+            "updated_at": "2024-02-08T15:35:50.084Z"
+        },
+        {
+            "id": 2,
+            "name": "jorge",
+            "email": "jorge.brabo@gmail.com",
+            "isCollaborator": false,
+            "accountToken": "",
+            "accountValidated": true,
+            "tokenResetPassword": "",
+            "created_at": "2024-02-17T16:41:01.974Z",
+            "updated_at": "2024-02-17T16:41:01.974Z"
+        }
+    ]
+```
