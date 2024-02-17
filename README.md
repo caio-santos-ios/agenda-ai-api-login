@@ -56,7 +56,7 @@ Conta criada com sucesso.
     }
 ```
 
-Retorno - 400:
+Retorno - 409:
 Quando o e-mail já esta cadastrado.
 
 ```json
