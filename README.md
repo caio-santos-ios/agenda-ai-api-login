@@ -253,8 +253,6 @@ Tentar atualizar email já cadastrado.
 Retorno - 204:
 Conta deletada com sucesso.
 
-#### NÂO TEM RETORNO
-
 Retorno - 409:
 Tentar deletar conta sem token de autenticação.
 
