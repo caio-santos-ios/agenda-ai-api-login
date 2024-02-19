@@ -46,6 +46,28 @@ const login = async (dataLogin: { email: string, password: string }): Promise<st
     return token
 }
 
+const confirmationAccount = async (accountToken: string): Promise<void | any> => {
+    const findAccount = await prisma.account.findFirst({
+        where: {
+            accountToken   
+        }
+    })
+
+    if(!findAccount) throw new AppErro("not found", 404)
+    
+    await prisma.account.update({
+        where: {
+            email: findAccount.email
+        },
+        data: {
+            accountToken: "",
+            accountValidated: true
+        }
+    })
+
+    return
+}
+
 const resetPassword = async (token: string, newPassword: string): Promise<void> => {
     const findAccount = await prisma.account.findFirst({
         where: {
@@ -104,4 +126,4 @@ const update = async (id: string, updateAccount: any): Promise<IresponseAccountU
     return accountUpdated
 }
 
-export default { create, read, login, sendMail, resetPassword, destroy, update }
+export default { create, read, login, confirmationAccount, sendMail, resetPassword, destroy, update }
