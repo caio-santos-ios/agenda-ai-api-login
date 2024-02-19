@@ -29,7 +29,7 @@ npm run dev
 
 ### POST - /accounts
 
-Dados para criação:
+Dados de entrada:
 
 ```json
     {
@@ -142,7 +142,7 @@ Litagem de todas as contas.
 Retorno - 200:
 Altera senha da conta.
 
-Dados para alterar:
+Dados de entrada:
 
 ```json
     {
