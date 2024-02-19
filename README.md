@@ -19,9 +19,9 @@ npm run dev
 
 | Método | Rota                             | Descrição                            |
 | ------ | ------------------------         | ------------------------------------ |
-| POST   | /accounts/login                  | Rota para login                      |
+| POST   | /accounts                        | Rota para se registrar               |
 | PATCH  | /accounts/confirmation           | Rota para confirmar a conta criada   |
-| POST   | /accounts                        | Rota para registro                   |
+| POST   | /accounts/login                  | Rota para fazer login                |
 | GET    | /accounts                        | Rota para obter todos usuários       |
 | POST   | /accounts/resetPassword          | Rota para solicitar alterar senha    |
 | PATCH  | /accounts/resetPassword/:token   | Rota para alterar senha              |
@@ -64,6 +64,10 @@ Quando o e-mail já esta cadastrado.
         "message": "E-mail inválido"
     }
 ```
+
+### PATCH - /accounts/confirmation/:token
+
+<span>Ao chamar a rota de passando o token, a conta será ativada. </span>
 
 ### POST - /accounts/login
 
