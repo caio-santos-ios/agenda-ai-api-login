@@ -19,6 +19,12 @@ const login = async (req: Request, res: Response): Promise<Response> => {
     return res.status(200).json({token})
 } 
 
+const confirmationAccount = async (req: Request, res: Response): Promise<Response> => {
+    await accountServices.confirmationAccount(req.params.token)
+
+    return res.status(200).json({message: "Conta confirmada"})
+}
+
 const resetPassword = async (req: Request, res: Response): Promise<Response> => {
     await accountServices.resetPassword(req.params.token, req.body.password)
     
@@ -37,4 +43,4 @@ const update = async (req: Request, res: Response): Promise<Response> => {
     return res.status(200).json(accountUpdated)
 }
 
-export default { create, read, login, resetPassword, destroy, update }
+export default { create, read, login, confirmationAccount, resetPassword, destroy, update }

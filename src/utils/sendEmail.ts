@@ -6,7 +6,7 @@ interface Iaccount {
     password: string
 }
 
-const transport = createTransport({
+export const transporter = createTransport({
     service: 'gmail',
     host: "imap.gmail.com",
     port: 993,
@@ -18,7 +18,9 @@ const transport = createTransport({
 })
 
 export const sendMail = async (account: Iaccount, title: string, html: string) => {
-    await transport.sendMail({
+    console.log(account)
+
+    await transporter.sendMail({
         to: account.email,
         subject: title,
         html
