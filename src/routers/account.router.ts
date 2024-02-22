@@ -6,6 +6,7 @@ import { Request, Response } from "express";
 export const router: Router = Router() 
 
 router.post("/", middlewares.emailExisty, accountController.create)
+router.post("/verifyToken", middlewares.verifyToken, (req: Request, res: Response) => res.json(res.locals.ownerToken))
 router.patch("/confirmation/:token", accountController.confirmationAccount)
 router.post("/login", middlewares.accountValidated, accountController.login)
 router.get("/", accountController.read)
